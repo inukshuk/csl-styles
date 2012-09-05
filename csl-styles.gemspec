@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.summary     = 'CSL styles and locales'
   s.description =
     """
-    The official Citation Style Language (CSL) styles and locales.
+    The official Citation Style Language (CSL) styles and locale files.
     """
 
   s.license     = 'CC-BY-SA'
@@ -22,7 +22,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency('csl', ['~>1.0'])
 
-  s.files        = `git ls-files`.split("\n")
+  s.files = Dir['**/*'].select { |path|
+    path =~ /^README|^lib|^vendor\/(locales.+xml$|styles.+csl$)/
+  }
+
   s.test_files   = []
   s.executables  = []
   s.require_path = 'lib'
