@@ -23,7 +23,8 @@ Gem::Specification.new do |s|
   s.add_dependency('csl', ['~>1.0'])
 
   s.files = Dir['**/*'].select { |path|
-    path =~ /^README|^lib|^vendor\/(locales.+xml$|styles.+csl$)/
+    path.split(/\//)[-1].length < 101 &&
+      path =~ /^README|^lib|^vendor\/(locales.+xml$|styles.+csl$)/
   }
 
   s.test_files   = []
