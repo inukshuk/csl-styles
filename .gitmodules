@@ -1,6 +1,6 @@
 [submodule "vendor/styles"]
 	path = vendor/styles
-	url = https://github.com/citation-style-language/styles.git
+	url = https://github.com/citation-style-language/styles-distribution.git
 	branch = master
 [submodule "vendor/locales"]
 	path = vendor/locales
