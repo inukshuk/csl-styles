@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
     The official Citation Style Language (CSL) styles and locale files.
     """
 
-  s.license     = 'CC-BY-SA'
+  s.license     = 'CC-BY-SA-3.0'
   s.date        = Time.now.strftime('%Y-%m-%d')
 
   s.add_dependency('csl', ['~>1.0'])
