@@ -2,6 +2,8 @@
 	path = vendor/locales
 	url = https://github.com/citation-style-language/locales.git
 	branch = master
+	update = checkout
 [submodule "vendor/styles"]
 	path = vendor/styles
 	url = https://github.com/citation-style-language/styles-distribution.git
+	update = checkout
