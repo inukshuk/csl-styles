@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.license     = 'CC-BY-SA-3.0'
   s.date        = Time.now.strftime('%Y-%m-%d')
 
-  s.add_dependency('csl', ['~>1.0'])
+  s.add_dependency('csl', ['~>2.0'])
 
   s.files = Dir['**/*'].select { |path|
     path.split(/\//)[-1].length < 101 &&
