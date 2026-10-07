@@ -1,36 +1,29 @@
-# -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
-
-require 'csl/styles/version'
+require_relative 'lib/csl/styles/version'
 
 Gem::Specification.new do |s|
   s.name        = 'csl-styles'
-  s.version     = CSL::Styles::VERSION.dup
-  s.platform    = Gem::Platform::RUBY
+  s.version     = CSL::Styles::VERSION
   s.authors     = ['Sylvester Keil']
-  s.email       = ['http://sylvester.keil.or.at']
+  s.email       = ['sylvester@keil.or.at']
   s.homepage    = 'https://github.com/inukshuk/csl-styles'
+  s.licenses    = ['CC-BY-SA-3.0']
   s.summary     = 'CSL styles and locales'
-  s.description =
-    """
-    The official Citation Style Language (CSL) styles and locale files.
-    """
+  s.description = 'The official Citation Style Language (CSL) styles and locale files.'
 
-  s.license     = 'CC-BY-SA-3.0'
-  s.date        = Time.now.strftime('%Y-%m-%d')
-
-  s.required_ruby_version = '>= 3.1'
-  s.add_dependency('csl', ['~>2.0'])
-
-  s.files = Dir['**/*'].select { |path|
-    path.split(/\//)[-1].length < 101 &&
-      path =~ /^README|^lib|^vendor\/(locales.+xml$|styles.+csl$)/
+  s.metadata = {
+    'source_code_uri' => 'https://github.com/inukshuk/csl-styles',
+    'bug_tracker_uri' => 'https://github.com/inukshuk/csl-styles/issues',
+    'rubygems_mfa_required' => 'true'
   }
 
-  s.test_files   = []
-  s.executables  = []
-  s.require_path = 'lib'
-end
+  s.required_ruby_version = '>= 3.1'
+  s.add_dependency 'csl', '~> 2.0'
 
-# vim: syntax=ruby
+  # File names must be shorter than 101 characters (tar format limit)
+  s.files = Dir[
+    'README.md',
+    'lib/**/*.rb',
+    'vendor/locales/**/*.xml',
+    'vendor/styles/**/*.csl'
+  ].select { |path| File.basename(path).length < 101 }
+end
